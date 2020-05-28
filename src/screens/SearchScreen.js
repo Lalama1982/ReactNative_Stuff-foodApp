@@ -1,28 +1,19 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import SearchBar from "../components/SearchBar";
-import yelp from "../api/yelp";
+import useResults from "../hooks/useResults";
+import ResultsList from "../components/ResultsList";
 
 const SearchScreen = () => {
   const [term, setTerm] = useState("");
-  const [results, setResults] = useState([]);
-  const [errorMessage, setErrorMessage] = useState("");
+  const [searchApi, results, errorMessage] = useResults();
 
-  const searchApi = async (searchTerm) => {
-    try {
-      const response = await yelp.get("/search", {
-        params: {
-          limit: 50,
-          term: searchTerm,
-          location: "san jose",
-        },
-      }); // This call equals to "https://api.yelp.com/v3/businesses/search?limit=50"
-      setErrorMessage();
-      setResults(response.data.businesses); // "businesses" is a branch of json receive from yelp
-    } catch (err) {
-      console.log("searchApi: ", err);
-      setErrorMessage("Error at searchApi");
-    }
+  const filterResultsByPrice = (price) => {
+    // price == '$' / '$$' / '$$$'
+    // [INFO] here result set is queries on price and resultent set is sent as whole
+    return results.filter((result) => {
+      return result.price === price;
+    });
   };
 
   return (
@@ -37,7 +28,10 @@ const SearchScreen = () => {
         onTermSubmit={() => searchApi(term)} // info: "onTermSubmit={searchApi} equals onTermSubmit={() => searchApi()}
       />
       {errorMessage ? <Text>{errorMessage}</Text> : null}
-      <Text>Results Count: {results.length}</Text>
+      <Text>Results Count for "{term}" is {results.length}</Text>
+      <ResultsList results={filterResultsByPrice('$')} title="Cost Effective" />
+      <ResultsList results={filterResultsByPrice('$$')} title="Bit Pricier" />
+      <ResultsList results={filterResultsByPrice('$$$')} title="Big Spender" />
     </View>
   );
 };
