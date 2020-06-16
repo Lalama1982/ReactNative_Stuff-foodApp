@@ -22,12 +22,12 @@ export default () => {
     }
   };
 
-  // use of "useEffect", makes this call, only once
+  // use of "useEffect", makes this call, only once as the initial app load
   useEffect(() => {
     console.log(
-      'Running "useEffect": with seach term "pasta as the initial search'
+      'Running "useEffect": with seach term "rice" as the initial search'
     );
-    searchApi("pasta");
+    searchApi("rice");
   }, []);
 
   return [searchApi, results, errorMessage];

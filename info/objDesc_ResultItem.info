@@ -1,0 +1,49 @@
+@ "ResultsList.js"
+------------------
+Object {
+  "alias": "thien-long-vietnamese-restaurant-san-jose",
+  "categories": Array [
+    Object {
+      "alias": "vietnamese",
+      "title": "Vietnamese",
+    },
+    Object {
+      "alias": "seafood",
+      "title": "Seafood",
+    },
+    Object {
+      "alias": "noodles",
+      "title": "Noodles",
+    },
+  ],
+  "coordinates": Object {
+    "latitude": 37.30973,
+    "longitude": -121.81354,
+  },
+  "display_phone": "(408) 223-6188",
+  "distance": 6380.416519972594,
+  "id": "VzeK6EeDB7HvP8CFHdb0RQ",
+  "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/2jHL9-bHvD1H0bjja3RdWg/o.jpg",
+  "is_closed": false,
+  "location": Object {
+    "address1": "3005 Silver Creek Rd",
+    "address2": "Ste 138",
+    "address3": "",
+    "city": "San Jose",
+    "country": "US",
+    "display_address": Array [
+      "3005 Silver Creek Rd",
+      "Ste 138",
+      "San Jose, CA 95121",
+    ],
+    "state": "CA",
+    "zip_code": "95121",
+  },
+  "name": "Thien Long Vietnamese Restaurant",
+  "phone": "+14082236188",
+  "price": "$$",
+  "rating": 4,
+  "review_count": 1031,
+  "transactions": Array [],
+  "url": "https://www.yelp.com/biz/thien-long-vietnamese-restaurant-san-jose?adjust_creative=m6LhOBMtIQeH68VmHcXq9Q&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=m6LhOBMtIQeH68VmHcXq9Q",
+}

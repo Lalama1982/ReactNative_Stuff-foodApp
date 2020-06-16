@@ -1,0 +1,7 @@
+@ResultsShowScreen.js
+Represents data received from yelp for "data={result.photos}"
+Array [
+  "https://s3-media1.fl.yelpcdn.com/bphoto/Ab3uLg_0s7B2Ce9Gh_p3zA/o.jpg",
+  "https://s3-media1.fl.yelpcdn.com/bphoto/1pb-bZQu7uSx61fKe-NkKw/o.jpg",
+  "https://s3-media3.fl.yelpcdn.com/bphoto/S-Quy9NIkCzv_SFusgaJ0A/o.jpg",
+]
